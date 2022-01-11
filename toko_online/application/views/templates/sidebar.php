@@ -13,7 +13,7 @@
                     <!-- icon toko -->
                     <i class="fas fa-store"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">E-Selojari</div>
+                <div class="sidebar-text mx-3">sidagang</div>
             </a>
 
             <!-- Divider -->
@@ -21,7 +21,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo base_url('dashboard')?>">
+                <a class="nav-link" href="<?php echo base_url('kategori/abon') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -34,28 +34,28 @@
                 KATEGORI PRODUK
             </div>
 
-            
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/abon')?>">
+                <a class="nav-link" href="<?php echo base_url('kategori/abon') ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Abon</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/sambal')?>">
+                <a class="nav-link" href="<?php echo base_url('kategori/sambal') ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Sambal</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/keripik')?>">
+                <a class="nav-link" href="<?php echo base_url('kategori/keripik') ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Keripik</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/camilan_manis')?>">
+                <a class="nav-link" href="<?php echo base_url('kategori/camilan_manis') ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Camilan Manis</span></a>
             </li>
@@ -93,11 +93,9 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -111,18 +109,14 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -137,7 +131,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <?php
-                                    $keranjang = 'Keranjang Belanja: '.$this->cart->total_items(). ' items'
+                                    $keranjang = 'Keranjang Belanja: ' . $this->cart->total_items() . ' items'
                                     ?>
 
                                     <?php echo anchor('dashboard/detail_keranjang', $keranjang) ?>
@@ -146,11 +140,13 @@
                             <div class="topbar-divider d-none d-sm-block"></div>
 
                             <ul class="na navbar-nav navbar-right">
-                                <?php if($this->session->userdata('username')) { ?>
-                                    <li><div>Selamat Datang, <?php echo $this->session->userdata('username') ?></div></li>
-                                    <li class="ml-3"><?php echo anchor('auth/logout','Logout') ?></li>
-                                    <?php } else { ?>
-                                        <li><?php echo anchor('auth/login', 'Login') ?></li>
+                                <?php if ($this->session->userdata('username')) { ?>
+                                    <li>
+                                        <div>Selamat Datang, <?php echo $this->session->userdata('username') ?></div>
+                                    </li>
+                                    <li class="ml-3"><?php echo anchor('auth/logout', 'Logout') ?></li>
+                                <?php } else { ?>
+                                    <li><?php echo anchor('auth/login', 'Login') ?></li>
                                 <?php } ?>
                             </ul>
                         </div>

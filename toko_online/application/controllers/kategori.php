@@ -1,6 +1,16 @@
 <?php
 
-class Kategori extends CI_Controller{
+class Kategori extends CI_Controller
+{
+    public function dashboard()
+    {
+        $data['abon'] = $this->model_kategori->data_abon()->result();
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('dashboard', $data);
+        $this->load->view('templates/footer');
+    }
+
     public function abon()
     {
         $data['abon'] = $this->model_kategori->data_abon()->result();
