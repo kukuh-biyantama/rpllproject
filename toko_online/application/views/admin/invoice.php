@@ -8,18 +8,19 @@
             <th>Alamat Pengiriman</th>
             <th>tanggal Pemesanan</th>
             <th>Batas Pembayaran</th>
-            <th>Aksi</th>
+            <th colspan="2" style="text-align: center;">Aksi</th>
         </tr>
 
         <?php foreach ($invoice as $inv) : ?>
-        <tr>
-            <td><?php echo $inv->id ?></td>
-            <td><?php echo $inv->nama ?></td>
-            <td><?php echo $inv->alamat ?></td>
-            <td><?php echo $inv->tgl_pesan ?></td>
-            <td><?php echo $inv->batas_bayar ?></td>
-            <td><?php echo anchor('admin/invoice/detail/'.$inv->id, '<div class="btn btn-sm btn-primary">Detail</div>')  ?></td>
-        </tr>
+            <tr>
+                <td><?php echo $inv->id ?></td>
+                <td><?php echo $inv->nama ?></td>
+                <td><?php echo $inv->alamat ?></td>
+                <td><?php echo $inv->tgl_pesan ?></td>
+                <td><?php echo $inv->batas_bayar ?></td>
+                <td><?php echo anchor('admin/invoice/detail/' . $inv->id, '<div class="btn btn-sm btn-primary">Detail</div>')  ?></td>
+                <td><?php echo anchor('admin/invoice/cetak/' . $inv->id, '<div class="btn btn-sm btn-primary">cetak</div>')  ?></td>
+            </tr>
 
         <?php endforeach; ?>
 
